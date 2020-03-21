@@ -1,0 +1,23 @@
+server:
+  port: 8890
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ssm?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 50MB
+  mail:
+    default-encoding: utf-8
+    host: smtp.163.com
+    password: YOUAREMYDREAM21
+    port: 25
+    protocol: smtp
+    username: happ123kobe@163.com
