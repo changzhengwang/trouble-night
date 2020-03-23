@@ -48,7 +48,7 @@ public class OtherController {
             String date = new Date(System.currentTimeMillis()).toString();
             //上传目录地址
             //1.1保存到项目指定目录
-            String uploadDir="F:\\images\\"+imagetype+"\\"+date;
+            String uploadDir="E:\\images\\"+imagetype+"\\"+date;
             //1.2 上传到相对路径 request.getSession().getServletContext().getRealPath("/")+"upload/";
             //1.2 此路径为tomcat下，可以输出看一看
             //如果目录不存在，自动创建文件夹

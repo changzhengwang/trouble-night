@@ -39,14 +39,6 @@ public class UserController {
         return Msg.success().add("list",permissions);
     }
 
-//    @CrossOrigin(origins = "http://localhost:8891", maxAge = 3600,allowCredentials = "true")
-//    @GetMapping("/getUsers")
-//    public List<User> getAllUser(HttpServletRequest request){
-//        HttpSession mysession =request.getSession();
-//        System.out.println("拦截器中的session的id是===="
-//                + mysession.getId());
-//        return userService.getUsers();
-//    }
 
     @GetMapping("/getOneByName")
     public List<User> getOne(){
