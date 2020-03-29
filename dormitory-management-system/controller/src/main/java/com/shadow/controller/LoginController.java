@@ -1,12 +1,12 @@
 package com.shadow.controller;
 
-
-
 import com.shadow.entity.Msg;
 import com.shadow.entity.User;
 import com.shadow.entity.UserInfo;
 import com.shadow.repo.UserInfoRepo;
 import com.shadow.repo.UserRepo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -16,10 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
+/**
+ * @Author:wcz
+ */
 @RestController
 public class LoginController {
+
+    private static Logger logger= LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
 
     @Autowired
     UserRepo userRepo;
@@ -28,7 +32,6 @@ public class LoginController {
 
     @GetMapping("/login2")
     public Msg login2(@RequestParam(value = "name") String name, @RequestParam(value = "password") String password, HttpServletRequest request) {
-        HttpSession mysession =request.getSession();
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(name, password);
         try {
@@ -44,7 +47,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public Msg login(@RequestBody User user, HttpServletRequest request) {
-        HttpSession mysession =request.getSession();
+        logger.info(user);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getSid(), user.getPassword());
         try {
