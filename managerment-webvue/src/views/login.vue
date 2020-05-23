@@ -80,6 +80,7 @@
 				//console.log(result);
 				localStorage.setItem('user',JSON.stringify(result.extend.user));
 				localStorage.setItem('userInfo',JSON.stringify(result.extend.userInfo));
+				localStorage.setItem('word',"小伙子");
 				this.$router.push("/home");
 			}	
 			else{this.logining = false;}

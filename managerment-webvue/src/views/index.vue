@@ -1,6 +1,12 @@
 <template>
 	<div style="margin: auto;width: 100%;">
 		<el-col :span="24">
+			<div class="common-padding">
+				<Notice></Notice>
+			</div>
+		</el-col>
+		
+		<el-col :span="24">
 			<el-col :span="10">
 				<div class="common-padding">
 					<Carousel></Carousel>
@@ -8,10 +14,23 @@
 			</el-col>
 			<el-col :span="14">
 				<div class="common-padding">
-					<BlackBoard></BlackBoard>
+					<BlackBoard ></BlackBoard>
 				</div>
 			</el-col>
 			
+		</el-col>
+		
+		<el-col :span="24">
+			<el-col :span="12">
+				<div class="common-padding">
+					<News newstype='学校新闻'></News>
+				</div>
+			</el-col>
+			<el-col :span="12">
+				<div class="common-padding">
+					<News newstype='宿舍新闻'></News>
+				</div>
+			</el-col>
 			
 		</el-col>
 		
@@ -23,10 +42,14 @@
 <script>
 	import BlackBoard from '../components/index_part/blackboard.vue'
 	import Carousel from '../components/index_part/carousel.vue'
+	import News from '../components/index_part/news.vue'
+	import Notice from '../components/index_part/notice.vue'
 	export default{
 		components:{
 			Carousel,
-			BlackBoard
+			BlackBoard,
+			News,
+			Notice
 		},
 		data() {
 			return{

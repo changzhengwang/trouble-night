@@ -10,7 +10,7 @@
         </ul>
         <div class="tags-close-box">
             <el-dropdown @command="handleTags">
-                <el-button size="mini" type="primary">
+                <el-button size="mini" style="height: 25px;border: 0px;margin-top: 0px;" type="danger">
                     标签选项<i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
                 <el-dropdown-menu size="small" slot="dropdown">
@@ -62,7 +62,7 @@
                     return item.path === route.fullPath;
                 })
                 if(!isExist){
-                    if(this.tagsList.length >= 8){
+                    if(this.tagsList.length >= 12){
                         this.tagsList.shift();
                     }
                     this.tagsList.push({
@@ -122,7 +122,6 @@
         overflow: hidden;
         background: #fff;
         padding-right: 120px;
-        box-shadow: 0 5px 10px #ddd;
     }
 
     .tags ul {
@@ -132,31 +131,30 @@
     }
 
     .tags-li {
+		border-right: 1px solid #fff;
         float: left;
-        margin: 3px 5px 2px 3px;
         border-radius: 3px;
         font-size: 12px;
         overflow: hidden;
         cursor: pointer;
         height: 23px;
         line-height: 23px;
-        border: 1px solid #e9eaec;
-        background: #fff;
+        background: #ffaa00;
         padding: 0 5px 0 12px;
         vertical-align: middle;
-        color: #666;
+        color: #ffaa00;
         -webkit-transition: all .3s ease-in;
         -moz-transition: all .3s ease-in;
         transition: all .3s ease-in;
     }
 
     .tags-li:not(.active):hover {
-        background: #f8f8f8;
+        color: #000;
     }
 
     .tags-li.active {
-        color: #fff;
-		background-color: #409EFF;
+        color: #000;
+		background-color: #f0f0f0;
     }
 
     .tags-li-title {
@@ -166,11 +164,11 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         margin-right: 5px;
-        color: #666;
+        color: #fff;
     }
 
     .tags-li.active .tags-li-title {
-        color: #fff;
+        color: #000;
     }
 
     .tags-close-box {
@@ -178,12 +176,10 @@
         right: 0;
         top: 0;
         box-sizing: border-box;
-        padding-top: 1px;
         text-align: center;
         width: 110px;
-        height: 30px;
+        height: 25px;
         background: #fff;
-        box-shadow: -3px 0 15px 3px rgba(0, 0, 0, .1);
         z-index: 10;
     }
 

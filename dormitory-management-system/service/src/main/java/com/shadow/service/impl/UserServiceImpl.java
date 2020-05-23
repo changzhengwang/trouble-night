@@ -2,6 +2,7 @@ package com.shadow.service.impl;
 
 
 import com.shadow.entity.User;
+import com.shadow.mapper.UserMapper;
 import com.shadow.repo.UserRepo;
 import com.shadow.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,13 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepo userRepo;
+    @Autowired
+    UserMapper userMapper;
 
-
+    @Override
+    public List<User> selectByDormId(String dormId) {
+        return userMapper.selectByDormId(dormId);
+    }
 
     @Override
     public User findUserBySid(String sid) {

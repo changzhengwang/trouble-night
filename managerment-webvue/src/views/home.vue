@@ -5,11 +5,13 @@
 		<div  class="content-box" :class="{'content-collapse':collapse}">
 			<Tags></Tags>
 			<div class="content">
+				<el-scrollbar style="height: 100%;">
 			    <transition name="move" mode="out-in">
 			        <keep-alive :include="tagsList">
 			            <router-view></router-view>
 			        </keep-alive>
 			    </transition>
+				</el-scrollbar>
 			</div>
 			<el-drawer
 				title="文明发言,别搞事情"
@@ -91,5 +93,7 @@
 </script>
 
 <style>
-
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
 </style>

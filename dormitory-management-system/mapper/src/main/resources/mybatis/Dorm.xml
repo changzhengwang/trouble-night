@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shadow.mapper.DormMapper">
+    <select id="selectDorm" resultType="DormInfo">
+        select * from dorm_info
+        where dormitory_id=#{dormitoryId}
+        <if test="name !=null and name != ''">
+            and name=#{name}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="DormInfo" parameterType="String">
+        select * from dorm_info
+        where id=#{id}
+    </select>
+</mapper>

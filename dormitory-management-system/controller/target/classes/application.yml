@@ -21,3 +21,8 @@ spring:
     port: 25
     protocol: smtp
     username: happ123kobe@163.com
+mybatis:
+  type-aliases-package: com.shadow.entity
+  mapper-locations: classpath:mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

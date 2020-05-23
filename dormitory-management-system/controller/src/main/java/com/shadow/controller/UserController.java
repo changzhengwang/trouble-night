@@ -3,16 +3,19 @@ package com.shadow.controller;
 import com.google.gson.Gson;
 import com.shadow.entity.Msg;
 import com.shadow.entity.User;
+import com.shadow.repo.UserInfoRepo;
 import com.shadow.repo.UserRepo;
 import com.shadow.service.PermissionService;
 import com.shadow.service.UserService;
 
 
 import com.shadow.utils.HttpClientUtil;
+import com.shadow.utils.RespUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -27,9 +30,26 @@ public class UserController {
     @Autowired
     UserRepo userRepo;
     @Autowired
+    UserInfoRepo userInfoRepo;
+    @Autowired
     UserService userService;
     @Autowired
     PermissionService permissionService;
+
+    @GetMapping("/getUsersByDormId")
+    public RespUtil getUsersByDormId(@RequestParam("dormId")String dormId){
+        return RespUtil.success().data(userService.selectByDormId(dormId));
+    }
+
+    @GetMapping("/getUserById")
+    public RespUtil getUserWithInfoById(@RequestParam("id")int id){
+        return RespUtil.success().data(userRepo.findById(id));
+    }
+
+    @GetMapping("/getUserInfoByUId")
+    public RespUtil getUserInfoByUId(@RequestParam("id")int id){
+        return RespUtil.success().data(userInfoRepo.getFirstByUid(id));
+    }
 
     @GetMapping("/getPermissions")
     public Msg getAllMyPermission(){

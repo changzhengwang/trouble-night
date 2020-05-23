@@ -56,7 +56,6 @@ public class LoginController {
             session.setAttribute("subject", subject);
             User user1 = userRepo.findBySid(user.getSid()).get(0);
             user1.setPassword(null);
-            user1.setSign(0);
             user1.setSalt(null);
             UserInfo userInfo = userInfoRepo.getFirstByUid(user1.getId());
             return Msg.success().add("user",user1).add("userInfo",userInfo);

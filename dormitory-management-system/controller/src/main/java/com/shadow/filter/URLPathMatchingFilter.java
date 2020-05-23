@@ -20,9 +20,9 @@ public class URLPathMatchingFilter extends PathMatchingFilter {
     @Override
     protected boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue)
             throws Exception {
-        if(null==permissionService)
+        if(null==permissionService){
             permissionService = SpringContextUtils.getContext().getBean(PermissionService.class);
-
+        }
         String requestURI = getPathWithinApplication(request);
         System.out.println("requestURI:" + requestURI);
 
@@ -56,7 +56,9 @@ public class URLPathMatchingFilter extends PathMatchingFilter {
                 }
             }
             if (hasPermission)
+            {
                 return true;
+            }
             else {
                 response.setCharacterEncoding("UTF-8");
                 response.setContentType("application/json");

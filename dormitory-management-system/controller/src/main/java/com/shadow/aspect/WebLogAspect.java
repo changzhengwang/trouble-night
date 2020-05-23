@@ -42,7 +42,7 @@ public class WebLogAspect {
     @AfterReturning(returning = "ret", pointcut = "webLog()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
-        //logger.info("RESPONSE : " + ret);
+        logger.info("RESPONSE : " + ret);
     }
 
 }

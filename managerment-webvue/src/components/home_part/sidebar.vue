@@ -61,11 +61,26 @@ export default {
                     index: 'index',
                     title: '系统首页'
                 },
+				{
+				    icon: 'el-icon-house',
+				    index: 'dormmanage',
+				    title: '寝室管理'
+				},
+				{
+				    icon: 'el-icon-s-custom',
+				    index: 'studentmanage',
+				    title: '学生管理'
+				},
                 {
                     icon: 'el-icon-s-custom',
                     index: 'userinfo',
-                    title: '我的信息'
+                    title: '学生信息'
                 },
+				{
+				    icon: 'el-icon-s-custom',
+				    index: 'dorminfo',
+				    title: '寝室信息'
+				},
                 {
                     icon: 'el-icon-edit',
                     index: 'editer',

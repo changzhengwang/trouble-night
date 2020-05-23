@@ -9,10 +9,10 @@ import java.util.List;
 @Repository
 public interface UserRepo extends JpaRepository<User,Integer> {
 
-    User getFirstById(int id);
-
     List<User> findBySid(String sid);
 
     List<User> findBySign(int sign);
+
+    List<User> findById(int id);
 
 }

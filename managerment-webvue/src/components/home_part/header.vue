@@ -38,9 +38,9 @@
 					  {{user.name}}<i class="el-icon-arrow-down el-icon--right"></i>
 					</span>
 					<el-dropdown-menu slot="dropdown">
-									<el-dropdown-item icon="el-icon-s-home" command="a">主页</el-dropdown-item>
-						<el-dropdown-item icon="el-icon-chat-dot-round" command="b">聊天室</el-dropdown-item>
-									<el-dropdown-item icon="el-icon-close" command="c">退出</el-dropdown-item>
+						<el-dropdown-item icon="el-icon-s-home" command="a">主页</el-dropdown-item>
+						<el-dropdown-item icon="el-icon-chat-dot-round" command="b">寝室信息</el-dropdown-item>
+						<el-dropdown-item icon="el-icon-close" command="=z">退出</el-dropdown-item>
 					</el-dropdown-menu>
 				  </el-dropdown>
 			  </div>
@@ -81,7 +81,10 @@
 					case 'a':
 						this.$router.push('index');
 						break;
-					case 'c':{
+					case 'b':
+						this.$router.push('dorminfo');
+						break;
+					case 'z':{
 						this.$axios.post('logout',null);
 						window.localStorage.removeItem('user');
 						this.$router.push('login');

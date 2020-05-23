@@ -2,7 +2,7 @@
 	<el-carousel indicator-position="outside" height="300"  style="width: 100%;">
 	    <el-carousel-item v-for="item in texts" :key="item.index">
 	      <div class="block" >
-				<el-image :fit="'fill'"  :src="$globalMsg.sverHost+item.frontcut" style="height: 300px;width: 100%;"></el-image>
+				<el-image :fit="'fill'"  :src="$globalMsg.sverHost+item.frontcut" @click="openNews(item)" style="height: 300px;width: 100%;"></el-image>
 				<div style="position: absolute;bottom: 0px;">
 					<b style="font-size: 30px;color: black;">{{item.title}}</b>
 				</div>
@@ -21,7 +21,12 @@
 		methods:{
 			getArticles:async function(){
 				const result = await this.$axios.get("getArticles",null);
+				console.log(result);
 				this.texts = result.extend.list;
+			},
+			openNews(newsId){
+				this.$store.commit('changeNewsId',newsId);
+				this.$router.push('/newsinfo')
 			}
 		},
 		created() {

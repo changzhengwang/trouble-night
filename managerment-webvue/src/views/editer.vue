@@ -24,9 +24,14 @@
 				  </div>
 				  <br/>
 			  </div>
-		  <div ref="editor" class="text">
-		  </div>
+			
+				<div ref="editor" class="text">
+				</div>
+			
+			
+		  
 		</div>
+		
 	</div>
   
 </template>
@@ -182,6 +187,7 @@
 	float: left;
   }
   .text {
+	
 	margin-top: 12px;
     border: 1px solid #ccc;
     min-height: 80vh;

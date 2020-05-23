@@ -22,15 +22,19 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "idcard")
-    private String idcard;
 
     @Column(name="salt")
     private String salt;
 
-    @Column(name = "sign")
-    private int sign;
+    @Column(name = "type")
+    private char sign;
 
     @Column(name = "createdate")
     private Date createdate;
+
+    @Column(name = "dorm_id")
+    private String dormId;
+
+    @Column(name = "on_school")
+    private String onSchool;
 }

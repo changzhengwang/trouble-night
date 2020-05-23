@@ -1,9 +1,9 @@
 <template>
-	<div style="background-color: rgba(255,255,255);height: 230px;">
+	<div style="background-color: rgba(255,255,255);height: 240px;">
 		<div class="userImgDiv" >
 			<img :src="userImage" style="border-radius:50%;width: 90px;height:90px;"/>
 		</div>
-		<div style="float: left;position: relative;top: 5px;left: 40px;">
+		<div style="float: left;position: relative;top: 25px;left: 40px;">
 			<h2>{{user.name}}</h2>
 			<h3>{{user.sid}}</h3>
 		</div>
@@ -12,6 +12,8 @@
 			<div class="common-padding" style="width: 100%;text-align: left;">
 				<p class="no-margin" style="color: #99A9BF;">专业班级：{{proAndClass}}</p>
 				<p class="no-margin" style="color: #99A9BF;">宿舍信息：{{dormitory}}</p>
+				<p class="no-margin" style="color: #99A9BF;">手机号码：13523638147</p>
+				<p class="no-margin" style="color: #99A9BF;">常用邮箱：904185042@qq.com</p>
 			</div>
 			<div style="width: 100%;">
 				
